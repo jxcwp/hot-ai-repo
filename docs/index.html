@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Open Source Radar</title>
+    <meta name="description" content="每天筛选最值得关注的 3 个 AI 开源项目，提供中文解读、同类对比、上手教程和商业视角。">
+    <style>
+      :root {
+        --bg: #f6f3eb;
+        --panel: rgba(255, 251, 244, 0.92);
+        --ink: #1f2320;
+        --muted: #5f665f;
+        --line: rgba(31, 35, 32, 0.12);
+        --brand: #0d7a5f;
+        --brand-2: #ca5d2a;
+        --shadow: 0 24px 60px rgba(31, 35, 32, 0.12);
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Source Han Sans SC", "Noto Sans SC", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top left, rgba(202, 93, 42, 0.18), transparent 28%),
+          radial-gradient(circle at top right, rgba(13, 122, 95, 0.16), transparent 30%),
+          linear-gradient(180deg, #f9f5ee 0%, var(--bg) 100%);
+      }
+
+      a { color: inherit; }
+
+      .wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 32px 20px 64px;
+      }
+
+      .hero {
+        padding: 42px;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: var(--panel);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(8px);
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 16px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(13, 122, 95, 0.1);
+        color: var(--brand);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 760px;
+        font-size: clamp(36px, 6vw, 64px);
+        line-height: 1.03;
+      }
+
+      .intro {
+        max-width: 700px;
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.7;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 18px;
+        border-radius: 14px;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .button.primary {
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .button.secondary {
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.58);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.9fr;
+        gap: 22px;
+        margin-top: 26px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: var(--panel);
+        padding: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .card h2,
+      .section h2 {
+        margin: 0 0 16px;
+        font-size: 24px;
+      }
+
+      .latest-title {
+        margin: 0 0 12px;
+        font-size: 32px;
+        line-height: 1.2;
+      }
+
+      .meta,
+      .note {
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 20px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .chips li {
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.68);
+        font-weight: 700;
+      }
+
+      .section {
+        margin-top: 22px;
+        padding: 28px;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: var(--panel);
+        box-shadow: var(--shadow);
+      }
+
+      .list,
+      .archive {
+        display: grid;
+        gap: 14px;
+      }
+
+      .list-item,
+      .archive-item {
+        padding: 18px 20px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.62);
+      }
+
+      .list-item strong,
+      .archive-item strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 18px;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+        margin-top: 22px;
+      }
+
+      .focus {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .focus span {
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(202, 93, 42, 0.1);
+        color: var(--brand-2);
+        font-weight: 700;
+      }
+
+      .footer {
+        margin-top: 22px;
+        padding: 28px;
+        border-radius: 24px;
+        border: 1px solid var(--line);
+        background: linear-gradient(135deg, rgba(13, 122, 95, 0.08), rgba(202, 93, 42, 0.08));
+        box-shadow: var(--shadow);
+      }
+
+      .footer p { margin: 0; line-height: 1.8; }
+
+      .loading {
+        opacity: 0.7;
+      }
+
+      @media (max-width: 860px) {
+        .hero,
+        .card,
+        .section,
+        .footer { padding: 22px; }
+        .grid,
+        .two-col { grid-template-columns: 1fr; }
+        .latest-title { font-size: 26px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="hero">
+        <div class="eyebrow">Daily AI Open Source Top 3</div>
+        <h1>每天帮你从 GitHub 里，筛出真正值得盯住的 3 个 AI 开源项目</h1>
+        <p class="intro">
+          AI Open Source Radar 面向中文开发者、产品经理和创业者，持续输出 GitHub 热门 AI 项目的中文解读、同类对比、上手建议和商业视角。
+        </p>
+        <div class="actions">
+          <a class="button primary" id="hero-latest-link" href="../content/top3/2026-03-14/github-trending-ai-top3-2026-03-14-wechat.md">阅读今日 Top 3</a>
+          <a class="button secondary" href="https://github.com/jxcwp/hot-ai-repo" target="_blank" rel="noreferrer">Star GitHub 仓库</a>
+          <a class="button secondary" href="#follow">关注公众号</a>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card loading" id="latest-card">
+          <p class="meta" id="latest-date">今日更新 · 2026-03-14</p>
+          <h2 class="latest-title" id="latest-title">GitHub 趋势炸出 3 个 AI 开源狠角色，今天最该盯住的是谁？</h2>
+          <p class="note" id="latest-note">
+            今天入选的是 Gemini CLI、Firecrawl、DeerFlow。筛选逻辑优先看近期增长势能、真实使用价值、工程落地潜力和商业想象空间，而不只是看历史 Star。
+          </p>
+          <ul class="chips" id="latest-projects">
+            <li>Gemini CLI</li>
+            <li>Firecrawl</li>
+            <li>DeerFlow</li>
+          </ul>
+          <div class="actions">
+            <a class="button primary" id="latest-link" href="../content/top3/2026-03-14/github-trending-ai-top3-2026-03-14-wechat.md">查看正文</a>
+            <a class="button secondary" href="../content/top3/README.md">查看历史归档</a>
+          </div>
+        </article>
+
+        <aside class="card">
+          <h2>你能在这里得到什么</h2>
+          <div class="list">
+            <div class="list-item">
+              <strong>中文解读</strong>
+              <span class="note">不是搬运 README，而是解释项目到底解决了什么问题。</span>
+            </div>
+            <div class="list-item">
+              <strong>同类对比</strong>
+              <span class="note">帮你判断它和现有方案相比，值不值得继续跟踪。</span>
+            </div>
+            <div class="list-item">
+              <strong>上手与商业建议</strong>
+              <span class="note">同时覆盖试用门槛、产品化思路和风险提示。</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section">
+        <h2>最新归档</h2>
+        <div class="archive loading" id="archive-list">
+          <a class="archive-item" href="../content/top3/2026-03-14/github-trending-ai-top3-2026-03-14-wechat.md">
+            <strong>2026-03-14 · GitHub 趋势炸出 3 个 AI 开源狠角色，今天最该盯住的是谁？</strong>
+            <span class="note">Gemini CLI / Firecrawl / DeerFlow</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="two-col">
+        <article class="section">
+          <h2>重点关注方向</h2>
+          <div class="focus">
+            <span>Agent</span>
+            <span>Coding</span>
+            <span>RAG</span>
+            <span>Voice</span>
+            <span>Video</span>
+            <span>AI Infra</span>
+          </div>
+        </article>
+        <article class="section" id="follow">
+          <h2>关注碳基生物观察局</h2>
+          <p class="note">
+            如果你也在关注 AI、Agent 和最新开源趋势，欢迎关注我的微信公众号：碳基生物观察局。
+            我会持续分享值得跟踪的 AI 项目、产品观察和实战解读。
+          </p>
+        </article>
+      </section>
+
+      <section class="footer">
+        <p>
+          GitHub Pages 发布建议：到 GitHub 仓库设置里打开 <strong>Pages</strong>，Source 选择 <strong>Deploy from a branch</strong>，Branch 选择 <strong>main</strong>，Folder 选择 <strong>/docs</strong>。
+        </p>
+      </section>
+    </main>
+    <script>
+      async function loadTop3Index() {
+        try {
+          const response = await fetch('../content/top3/index.json', { cache: 'no-store' });
+          if (!response.ok) throw new Error('Failed to load index');
+          const data = await response.json();
+          const entries = Array.isArray(data.entries) ? data.entries : [];
+          if (!entries.length) return;
+
+          const latest = entries[0];
+          const latestLink = latest.wechat_path ? '../' + latest.wechat_path : '#';
+          const latestNames = (latest.projects || []).map((project) => project.name).filter(Boolean);
+
+          document.getElementById('hero-latest-link').href = latestLink;
+          document.getElementById('latest-date').textContent = '今日更新 · ' + latest.date;
+          document.getElementById('latest-title').textContent = latest.title;
+          document.getElementById('latest-note').textContent = latestNames.length
+            ? '今天入选的是 ' + latestNames.join('、') + '。筛选逻辑优先看近期增长势能、真实使用价值、工程落地潜力和商业想象空间，而不只是看历史 Star。'
+            : '基于 GitHub 热门趋势、Topic 和仓库页近期信号综合筛选。';
+          document.getElementById('latest-link').href = latestLink;
+
+          const latestProjects = document.getElementById('latest-projects');
+          latestProjects.innerHTML = '';
+          latestNames.forEach((name) => {
+            const item = document.createElement('li');
+            item.textContent = name;
+            latestProjects.appendChild(item);
+          });
+
+          const archiveList = document.getElementById('archive-list');
+          archiveList.innerHTML = '';
+          entries.slice(0, 8).forEach((entry) => {
+            const link = document.createElement('a');
+            link.className = 'archive-item';
+            link.href = entry.wechat_path ? '../' + entry.wechat_path : '#';
+
+            const title = document.createElement('strong');
+            title.textContent = entry.date + ' · ' + entry.title;
+            link.appendChild(title);
+
+            const note = document.createElement('span');
+            note.className = 'note';
+            note.textContent = (entry.projects || []).map((project) => project.name).filter(Boolean).join(' / ');
+            link.appendChild(note);
+
+            archiveList.appendChild(link);
+          });
+
+          document.getElementById('latest-card').classList.remove('loading');
+          archiveList.classList.remove('loading');
+        } catch (error) {
+          console.error(error);
+          document.getElementById('latest-card').classList.remove('loading');
+          document.getElementById('archive-list').classList.remove('loading');
+        }
+      }
+
+      loadTop3Index();
+    </script>
+  </body>
+</html>

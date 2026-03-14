@@ -24,6 +24,7 @@ If you care about AI, agents, RAG, coding, voice, and video, `Star` this repo fi
 - 日期 / Date: `2026-03-14`
 - 入选项目 / Picks: `Gemini CLI` / `Firecrawl` / `DeerFlow`
 - 历史归档 / Archive: [`content/top3/README.md`](content/top3/README.md)
+- GitHub Pages / Site: [`docs/index.html`](docs/index.html)
 
 ## Why This Repo
 
@@ -65,6 +66,7 @@ More thematic collections are coming.
 - [`content/top3/`](content/top3/): 每日推文和归档 / daily posts and archive
 - [`content/top3/index.json`](content/top3/index.json): 机器可读索引 / machine-readable index
 - [`content/top3/README.md`](content/top3/README.md): 人工浏览索引 / human-readable archive
+- [`docs/index.html`](docs/index.html): GitHub Pages homepage
 
 ## How To Use
 
