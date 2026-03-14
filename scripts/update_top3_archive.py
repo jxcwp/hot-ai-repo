@@ -37,8 +37,9 @@ def main() -> None:
             date = entry.get("date", "未知日期")
             title = entry.get("title", "未命名归档")
             path = entry.get("wechat_path", "")
+            slug = entry.get("slug", "")
             github_url = GITHUB_BASE + path if path else ""
-            pages_url = PAGES_BASE + path if path else ""
+            pages_url = PAGES_BASE + f"article.html?slug={slug}" if slug else (PAGES_BASE + path if path else "")
             project_names = [project.get("name", "") for project in entry.get("projects", []) if project.get("name")]
             summary = " / ".join(project_names)
             link_part = title

@@ -265,7 +265,7 @@
           AI Open Source Radar 面向中文开发者、产品经理和创业者，持续输出 GitHub 热门 AI 项目的中文解读、同类对比、上手建议和商业视角。
         </p>
         <div class="actions">
-          <a class="button primary" id="hero-latest-link" href="content/top3/2026-03-14/github-trending-ai-top3-2026-03-14-wechat.md">阅读今日 Top 3</a>
+          <a class="button primary" id="hero-latest-link" href="article.html?slug=github-trending-ai-top3-2026-03-14">阅读今日 Top 3</a>
           <a class="button secondary" href="https://github.com/jxcwp/hot-ai-repo" target="_blank" rel="noreferrer">Star GitHub 仓库</a>
           <a class="button secondary" href="#follow">关注公众号</a>
         </div>
@@ -284,7 +284,7 @@
             <li>DeerFlow</li>
           </ul>
           <div class="actions">
-            <a class="button primary" id="latest-link" href="content/top3/2026-03-14/github-trending-ai-top3-2026-03-14-wechat.md">查看正文</a>
+            <a class="button primary" id="latest-link" href="article.html?slug=github-trending-ai-top3-2026-03-14">查看正文</a>
             <a class="button secondary" href="content/top3/README.md">查看历史归档</a>
           </div>
         </article>
@@ -311,7 +311,7 @@
       <section class="section">
         <h2>最新归档</h2>
         <div class="archive loading" id="archive-list">
-          <a class="archive-item" href="content/top3/2026-03-14/github-trending-ai-top3-2026-03-14-wechat.md">
+          <a class="archive-item" href="article.html?slug=github-trending-ai-top3-2026-03-14">
             <strong>2026-03-14 · GitHub 趋势炸出 3 个 AI 开源狠角色，今天最该盯住的是谁？</strong>
             <span class="note">Gemini CLI / Firecrawl / DeerFlow</span>
           </a>
@@ -355,7 +355,7 @@
           if (!entries.length) return;
 
           const latest = entries[0];
-          const latestLink = latest.wechat_path || '#';
+          const latestLink = latest.slug ? 'article.html?slug=' + encodeURIComponent(latest.slug) : '#';
           const latestNames = (latest.projects || []).map((project) => project.name).filter(Boolean);
 
           document.getElementById('hero-latest-link').href = latestLink;
@@ -379,7 +379,7 @@
           entries.slice(0, 8).forEach((entry) => {
             const link = document.createElement('a');
             link.className = 'archive-item';
-            link.href = entry.wechat_path || '#';
+            link.href = entry.slug ? 'article.html?slug=' + encodeURIComponent(entry.slug) : '#';
 
             const title = document.createElement('strong');
             title.textContent = entry.date + ' · ' + entry.title;
