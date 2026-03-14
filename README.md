@@ -1,5 +1,11 @@
 # AI Open Source Radar
 
+[![GitHub Repo stars](https://img.shields.io/github/stars/jxcwp/hot-ai-repo?style=flat-square)](https://github.com/jxcwp/hot-ai-repo/stargazers)
+[![GitHub last commit](https://img.shields.io/github/last-commit/jxcwp/hot-ai-repo?style=flat-square)](https://github.com/jxcwp/hot-ai-repo/commits/main)
+[![Daily Top 3](https://img.shields.io/badge/daily-top%203-blue?style=flat-square)](content/top3/README.md)
+[![WeChat](https://img.shields.io/badge/WeChat-%E7%A2%B3%E5%9F%BA%E7%94%9F%E7%89%A9%E8%A7%82%E5%AF%9F%E5%B1%80-07C160?style=flat-square)](#follow)
+[![Language](https://img.shields.io/badge/language-zh--CN%20%2F%20EN-orange?style=flat-square)](#ai-open-source-radar)
+
 每天筛选最值得关注的 3 个 AI 开源项目，提供中文解读、同类对比、上手教程和商业视角。
 
 Daily top 3 AI open source picks with Chinese analysis, peer comparison, quickstart notes, and product-minded insights.
