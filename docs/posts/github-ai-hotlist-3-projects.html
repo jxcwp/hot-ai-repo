@@ -38,11 +38,18 @@
       .article-content pre code { padding:0; background:transparent; color:inherit; }
       .article-content a { color:var(--brand); text-decoration:none; border-bottom:1px solid rgba(13,122,95,.22); }
       .article-content a:hover { border-bottom-color: rgba(13,122,95,.5); }
+      .content-grid { display:grid; grid-template-columns:minmax(0, 1fr) 240px; gap:22px; align-items:start; }
+      .toc { position:sticky; top:20px; padding:18px; border-radius:22px; border:1px solid var(--line); background:rgba(255,255,255,.64); }
+      .toc-title { margin-bottom:12px; font-size:14px; font-weight:800; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; }
+      .toc nav { display:grid; gap:10px; }
+      .toc a { color:var(--ink); text-decoration:none; border:0; line-height:1.5; }
+      .toc a.toc-sub { padding-left:14px; color:var(--muted); font-size:14px; }
       .pager { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:24px; }
       .pager a { display:block; padding:18px; border-radius:20px; border:1px solid var(--line); background:rgba(255,255,255,.62); text-decoration:none; }
       .pager small { display:block; color:var(--muted); margin-bottom:6px; font-size:13px; font-weight:700; }
       .pager strong { display:block; line-height:1.5; }
       .footer { margin-top:20px; background:linear-gradient(135deg, rgba(13,122,95,.08), rgba(202,93,42,.08)); }
+      @media (max-width:900px) { .content-grid { grid-template-columns:1fr; } .toc { position:static; order:-1; } }
       @media (max-width:720px) { .topbar { flex-direction:column; align-items:flex-start; } .hero,.article,.footer { padding:22px; } .article-content p,.article-content li { font-size:16px; } .pager { grid-template-columns:1fr; } }
     </style>
   </head>
@@ -69,36 +76,36 @@
           <a class="button secondary" href="https://github.com/jxcwp/hot-ai-repo/blob/main/content/top3/2026-03-14/github-ai-hotlist-3-projects-wechat.md" target="_blank" rel="noreferrer">GitHub 文件</a>
         </div>
       </section>
-      <article class="article"><div class="article-content"><h1>GitHub AI 热榜里，真正值得现在跟进的 3 个开源项目</h1>
+      <article class="article"><div class="content-grid"><div class="article-content"><h1 id="github-ai-热榜里真正值得现在跟进的-3-个开源项目">GitHub AI 热榜里，真正值得现在跟进的 3 个开源项目</h1>
 <p>2026-03-14 AI 开源观察：从 GitHub Trending、<code>llm</code> / <code>agents</code> 热门 Topic 和仓库近期更新信号里，挑出 3 个更值得产品、研发和技术团队马上研究的项目。</p>
-<h2>摘要</h2>
+<h2 id="摘要">摘要</h2>
 <p>今天这份 Top 3，我没有只看历史总星数，而是更重视三个信号：一是 GitHub 趋势页和热门 Topic 里的可见热度，二是仓库在 3 月中旬仍保持更新和发版，三是项目是否已经从“演示级概念”走向“可以接进真实业务”。</p>
 <p>这次入选的 3 个项目分别覆盖了 <code>AI 编程代理</code>、<code>Agent 工具接入 / MCP 基础设施</code>、<code>AI 检索与 RAG 底座</code> 三个方向，组合起来看，基本就是当前 AI 应用落地最关键的三层能力。</p>
-<h2>导语</h2>
+<h2 id="导语">导语</h2>
 <p>如果你这两周一直在刷 GitHub，会很明显感觉到一个变化：AI 开源项目已经不再只是“谁又做了一个聊天界面”，而是开始围绕真实生产力堆基础设施。</p>
 <p>一边是 AI 编程代理持续升温，大家开始比较谁更接近工程团队真实可用；一边是 Agent 开始真正接工具、接权限、接工作流；另一边，RAG 和检索底座重新被重估，因为没有稳定的数据层，很多 Agent 只是看起来聪明。</p>
 <p>基于 GitHub Trending、<code>agents</code> 与 <code>llm</code> 主题页、以及各项目最近几天的更新与 release 信号，今天最值得关注的是下面这 3 个项目。👇</p>
 <hr>
-<h2>No.1 OpenHands</h2>
+<h2 id="no1-openhands">No.1 OpenHands</h2>
 <p><strong>GitHub：</strong> https://github.com/OpenHands/OpenHands</p>
 <p><strong>一句话介绍：</strong> 一个正在从“AI 写代码演示”走向“真实开发代理平台”的开源项目，既有 CLI，也有本地 GUI、SDK 和云端形态。</p>
-<h3>中文解读</h3>
+<h3 id="中文解读">中文解读</h3>
 <p>OpenHands 的价值，不只是“能不能让 AI 帮你改代码”，而是它已经把 AI 开发代理拆成了比较完整的产品层次：SDK、CLI、本地 GUI、Cloud、Enterprise 都已经摆出来了。</p>
 <p>这意味着它不再只是面向极客试玩，而是在尝试回答一个更现实的问题：当团队真的要把 AI 工程代理放进研发流程里，应该怎么部署、怎么协作、怎么管理权限、怎么接企业环境。</p>
 <p>从 GitHub 页面看，<code>69.1k stars</code>、<code>8.7k forks</code>，且仓库在 <code>2026-03-14</code> 仍有更新，最新 release 是 <code>1.5.0 - 2026-03-11</code>。README 里还明确给出了 CLI、本地 GUI、Cloud、Enterprise 的分层入口，这类信息密度通常是项目成熟度的直接信号。</p>
-<h3>为什么现在值得关注</h3>
+<h3 id="为什么现在值得关注">为什么现在值得关注</h3>
 <ul>
 <li>AI Coding Agent 赛道还在升温，但 OpenHands 已经不满足于“聊天式写代码”，而是在往完整开发工作台推进。</li>
 <li>README 直接给出 SWE-Bench 分数、SDK 文档、Tech Report，这说明团队在同时做产品化和研究叙事。</li>
 <li>仓库持续更新，且 Cloud / Enterprise 路线清晰，说明它正在从社区热度转成更稳的商业化叙事。</li>
 </ul>
-<h3>同类对比</h3>
+<h3 id="同类对比">同类对比</h3>
 <ul>
 <li>对比 <code>Devin</code>：OpenHands 是开源路线，更适合团队自行评估、二次开发和私有化研究。</li>
 <li>对比 <code>Claude Code</code> / <code>Codex CLI</code>：后两者更像模型厂商原生工具，OpenHands 更强调可组合形态和自托管空间。</li>
 <li>对比 <code>MetaGPT</code> / <code>AutoGen</code>：这些更偏多代理框架；OpenHands 更贴近“直接帮你做开发任务”的产品体验。</li>
 </ul>
-<h3>上手教程</h3>
+<h3 id="上手教程">上手教程</h3>
 <p><strong>难度：中</strong></p>
 <ol>
 <li>先读官方文档入口：<code>https://docs.openhands.dev/openhands/usage/run-openhands/cli-mode</code></li>
@@ -106,39 +113,39 @@
 <li>如果要看完整交互，再切到 <code>Local GUI</code>：<code>https://docs.openhands.dev/openhands/usage/run-openhands/local-setup</code></li>
 <li>如果你是平台团队，再继续看 <code>SDK</code>：<code>https://docs.openhands.dev/sdk</code></li>
 </ol>
-<h3>商用建议</h3>
+<h3 id="商用建议">商用建议</h3>
 <ul>
 <li>适合谁：做 AI 编程助手、内部研发提效平台、企业代码自动化流程的团队。</li>
 <li>最值得切入的方向：把它当“执行层”，接入你自己的代码仓、任务系统、知识库和审批流。</li>
 <li>更现实的打法：先做内部开发支持场景，比如单仓库改动、测试修复、文档同步，而不是一上来就追求全自动软件工程师。</li>
 </ul>
-<h3>风险提示</h3>
+<h3 id="风险提示">风险提示</h3>
 <ul>
 <li>核心仓库是 MIT，但 <code>enterprise/</code> 目录采用单独的 source-available 许可，商用前要区分清楚边界。</li>
 <li>AI 编程代理的真实效果高度依赖底层模型、任务类型和权限设计，不能把 README 表现直接等同于生产效果。</li>
 <li>如果团队缺少代码沙箱、审计和权限治理，直接大规模接入会有工程和安全风险。</li>
 </ul>
 <hr>
-<h2>No.2 Composio</h2>
+<h2 id="no2-composio">No.2 Composio</h2>
 <p><strong>GitHub：</strong> https://github.com/ComposioHQ/composio</p>
 <p><strong>一句话介绍：</strong> 一个面向 AI Agent 的工具接入与认证基础设施，把“让 Agent 真正调用外部应用”这件事做成了标准化 SDK。</p>
-<h3>中文解读</h3>
+<h3 id="中文解读-2">中文解读</h3>
 <p>如果说大模型本身决定了 Agent 会不会思考，那么 Composio 更像在解决 Agent “怎么动手”的问题。</p>
 <p>它的定位很直接：提供 Python 和 TypeScript SDK，把工具搜索、上下文管理、认证、外部应用接入这些繁琐问题统一封装起来。README 里明确提到支持 OpenAI、Anthropic、LangChain、LangGraph、LlamaIndex、Gemini、AutoGen、CrewAI 等多种框架，还单独提到基于它构建的 MCP Server 产品 <code>Rube</code>，能连接 500+ 应用。</p>
 <p>从 GitHub 信号看，Composio 在 <code>agents</code> Topic 页中排名靠前，仓库有 <code>27.4k stars</code>、<code>4.5k forks</code>，<code>2026-03-14</code> 仍在更新，最新 release 为 <code>@composio/cli@0.2.4</code>，发布时间 <code>2026-03-13</code>。对基础设施项目来说，这种 release 密度和生态兼容度，比单纯总星数更关键。</p>
-<h3>为什么现在值得关注</h3>
+<h3 id="为什么现在值得关注-2">为什么现在值得关注</h3>
 <ul>
 <li>Agent 正在从“能聊”走向“能操作”，Composio 刚好卡在工具调用这条最关键的基础设施链路上。</li>
 <li>MCP 持续升温，Composio 已经自然把自己放进 MCP 生态，而不是只做传统 SDK 封装。</li>
 <li>Python + TypeScript 双栈、多个主流 Agent 框架兼容，降低了它成为团队默认中间层的门槛。</li>
 </ul>
-<h3>同类对比</h3>
+<h3 id="同类对比-2">同类对比</h3>
 <ul>
 <li>对比 <code>LangChain Tools</code>：LangChain 更像应用框架；Composio 更专注连接器、认证和工具接入层。</li>
 <li>对比 <code>Composio</code> 自己强调的 <code>Rube/MCP</code> 路线：Rube 更偏即插即用的 MCP Server，Composio SDK 更适合开发者深度嵌入产品。</li>
 <li>对比手写 API Connector：自己接每个 SaaS 的成本很高，Composio 的价值在于统一抽象和认证管理。</li>
 </ul>
-<h3>上手教程</h3>
+<h3 id="上手教程-2">上手教程</h3>
 <p><strong>难度：低到中</strong></p>
 <ol>
 <li>TypeScript 安装：<code>npm install @composio/core</code></li>
@@ -147,39 +154,39 @@
 <li>先用 README 里的 <code>HACKERNEWS</code> 示例跑通一次 <code>tools.get(...)</code>，确认工具拉取流程正常，再换成你的业务工具集。</li>
 <li>需要更完整接入时，继续看文档：<code>https://docs.composio.dev</code></li>
 </ol>
-<h3>商用建议</h3>
+<h3 id="商用建议-2">商用建议</h3>
 <ul>
 <li>适合谁：做企业 Agent、AI 助手、自动化工作流、MCP 工具市场的团队。</li>
 <li>最实际的落地方向：把它接进客服、销售、内部协作、研发运营这些需要跨多个 SaaS 执行动作的场景。</li>
 <li>商业机会：围绕行业模板、权限治理、审计日志、国产 SaaS 连接器和私有部署增强能力做增值层。</li>
 </ul>
-<h3>风险提示</h3>
+<h3 id="风险提示-2">风险提示</h3>
 <ul>
 <li>README 提到部分能力依赖 Composio 后端和文档服务，严格离线或全自控场景需要额外验证架构边界。</li>
 <li>认证、外部应用操作、跨系统执行都带来权限和审计要求，落地时必须补安全治理。</li>
 <li>“500+ apps” 来自 README 中 <code>Rube</code> 描述，具体可用连接器质量和覆盖深度仍建议逐个验证。</li>
 </ul>
 <hr>
-<h2>No.3 Chroma</h2>
+<h2 id="no3-chroma">No.3 Chroma</h2>
 <p><strong>GitHub：</strong> https://github.com/chroma-core/chroma</p>
 <p><strong>一句话介绍：</strong> 一个面向 AI 应用的开源检索数据库，主打把向量检索、全文检索和应用侧体验做得更简单。</p>
-<h3>中文解读</h3>
+<h3 id="中文解读-3">中文解读</h3>
 <p>今天很多团队会把注意力放在 Agent 身上，但真正决定 AI 应用稳定性的，往往还是底层检索和数据召回能力。Chroma 之所以值得重新关注，是因为它正在把自己从“向量库”叙事升级成“AI 的开源搜索引擎”。</p>
 <p>README 写得很克制：它强调的是 Python / JavaScript 上手快、核心 API 只有 4 个函数、支持把你的数据直接变成可搜索上下文。对产品团队来说，这很重要，因为这类项目的真正门槛不是算法，而是能否足够快地成为业务系统的一部分。</p>
 <p>从 GitHub 页面看，Chroma 在 <code>agents</code> Topic 页和 AI 相关热门项目中都保持高可见度，仓库 <code>26.6k stars</code>、<code>2.1k forks</code>，<code>2026-03-14</code> 仍在更新，最新 release 为 <code>1.5.5</code>，发布时间 <code>2026-03-10</code>。README 还明确说明其开源许可是 <code>Apache-2.0</code>，这对企业采用相对友好。</p>
-<h3>为什么现在值得关注</h3>
+<h3 id="为什么现在值得关注-3">为什么现在值得关注</h3>
 <ul>
 <li>RAG 正在从“拼 demo”回到“比检索质量、比工程复杂度、比成本结构”，Chroma 刚好处在这个基础层。</li>
 <li>项目同时提供 OSS 与 Cloud 叙事，说明它已经过了单纯技术实验阶段。</li>
 <li>对很多 AI 应用团队来说，Chroma 的吸引力不只是功能，而是足够轻、足够快、足够容易嵌入现有栈。</li>
 </ul>
-<h3>同类对比</h3>
+<h3 id="同类对比-3">同类对比</h3>
 <ul>
 <li>对比 <code>Milvus</code>：Milvus 更偏重型向量数据库和大规模部署；Chroma 更适合开发者快速嵌入 AI 应用。</li>
 <li>对比 <code>Weaviate</code>：Weaviate 的能力面更广；Chroma 的优势是上手路径更短，开发者心智更轻。</li>
 <li>对比 <code>pgvector</code>：Postgres 方案适合已有数据库统一栈；Chroma 更像为 AI 检索场景原生设计。</li>
 </ul>
-<h3>上手教程</h3>
+<h3 id="上手教程-3">上手教程</h3>
 <p><strong>难度：低</strong></p>
 <ol>
 <li>Python 安装：<code>pip install chromadb</code></li>
@@ -188,23 +195,23 @@
 <li>用 README 的最小示例完成 4 步：创建 client -&gt; 建 collection -&gt; add 文档 -&gt; query 查询</li>
 <li>需要进阶能力时，再去看文档：<code>https://docs.trychroma.com/</code></li>
 </ol>
-<h3>商用建议</h3>
+<h3 id="商用建议-3">商用建议</h3>
 <ul>
 <li>适合谁：做知识库问答、企业搜索、文档助手、客服检索增强、内部数据 Copilot 的团队。</li>
 <li>最适合的策略：先把它作为 AI 检索层单点接入，验证召回与延迟，再决定是否扩成更复杂的数据平台。</li>
 <li>如果你做垂直行业应用，真正的差异化不在“有没有 RAG”，而在数据清洗、索引策略和权限过滤，这些都能围绕 Chroma 做产品层封装。</li>
 </ul>
-<h3>风险提示</h3>
+<h3 id="风险提示-3">风险提示</h3>
 <ul>
 <li>Chroma 很适合快速落地，但超大规模、多租户、复杂治理场景下，仍需要提前验证架构边界。</li>
 <li>README 提到 Cloud，但本文没有进一步核验其计费、SLA 和企业特性，不宜直接视作成熟商业托管承诺。</li>
 <li>检索效果依赖 embedding、切片、过滤策略和业务数据质量，数据库本身不是全部答案。</li>
 </ul>
 <hr>
-<h2>今天为什么是这 3 个</h2>
+<h2 id="今天为什么是这-3-个">今天为什么是这 3 个</h2>
 <p>如果只看 GitHub 总星数，今天能写进榜单的项目会很多；但如果把筛选条件换成“GitHub Trending 和热门 Topic 里的可见热度 + 最近几天仍在更新/发版 + 对真实业务有明确落地价值”，范围会立刻收窄。</p>
 <p>OpenHands 代表的是 AI 编程代理的产品化前沿；Composio 代表的是 Agent 连接真实世界工具的基础设施层；Chroma 代表的是 AI 应用重新重视的数据检索底座。</p>
-<p>放在一起看，它们刚好对应了这轮 AI 应用落地最重要的三层：<strong>执行层、连接层、数据层</strong>。这也是为什么，今天最值得关注的是这 3 个项目。 🚀</p></div><div class="pager"><a href="../posts/github-trending-ai-top3-2026-03-14.html"><small>上一篇</small><strong>GitHub 趋势炸出 3 个 AI 开源狠角色，今天最该盯住的是谁？</strong></a><div></div></div></article>
+<p>放在一起看，它们刚好对应了这轮 AI 应用落地最重要的三层：<strong>执行层、连接层、数据层</strong>。这也是为什么，今天最值得关注的是这 3 个项目。 🚀</p><div class="pager"><a href="../posts/github-trending-ai-top3-2026-03-14.html"><small>上一篇</small><strong>GitHub 趋势炸出 3 个 AI 开源狠角色，今天最该盯住的是谁？</strong></a><div></div></div></div><aside class="toc"><div class="toc-title">目录导航</div><nav><a class="" href="#摘要">摘要</a><a class="" href="#导语">导语</a><a class="" href="#no1-openhands">No.1 OpenHands</a><a class="toc-sub" href="#中文解读">中文解读</a><a class="toc-sub" href="#为什么现在值得关注">为什么现在值得关注</a><a class="toc-sub" href="#同类对比">同类对比</a><a class="toc-sub" href="#上手教程">上手教程</a><a class="toc-sub" href="#商用建议">商用建议</a><a class="toc-sub" href="#风险提示">风险提示</a><a class="" href="#no2-composio">No.2 Composio</a><a class="toc-sub" href="#中文解读-2">中文解读</a><a class="toc-sub" href="#为什么现在值得关注-2">为什么现在值得关注</a><a class="toc-sub" href="#同类对比-2">同类对比</a><a class="toc-sub" href="#上手教程-2">上手教程</a><a class="toc-sub" href="#商用建议-2">商用建议</a><a class="toc-sub" href="#风险提示-2">风险提示</a><a class="" href="#no3-chroma">No.3 Chroma</a><a class="toc-sub" href="#中文解读-3">中文解读</a><a class="toc-sub" href="#为什么现在值得关注-3">为什么现在值得关注</a><a class="toc-sub" href="#同类对比-3">同类对比</a><a class="toc-sub" href="#上手教程-3">上手教程</a><a class="toc-sub" href="#商用建议-3">商用建议</a><a class="toc-sub" href="#风险提示-3">风险提示</a><a class="" href="#今天为什么是这-3-个">今天为什么是这 3 个</a></nav></aside></div></article>
       <section class="footer"><p class="muted">如果你也在关注 AI、Agent 和最新开源趋势，欢迎关注微信公众号：碳基生物观察局。我会持续分享值得跟踪的 AI 项目、产品观察和实战解读。</p></section>
     </main>
   </body>

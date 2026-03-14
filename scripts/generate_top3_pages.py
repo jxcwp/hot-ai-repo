@@ -41,9 +41,17 @@ def render_inline(text: str) -> str:
     return escaped
 
 
-def markdown_to_html(markdown: str) -> str:
+def slugify(text: str) -> str:
+    slug = re.sub(r"[^\w\u4e00-\u9fff\- ]+", "", text).strip().lower()
+    slug = re.sub(r"\s+", "-", slug)
+    return slug or "section"
+
+
+def markdown_to_html(markdown: str) -> tuple[str, list[dict]]:
     lines = markdown.replace("\r", "").split("\n")
     out = []
+    toc = []
+    anchor_counts = {}
     paragraph = []
     in_code = False
     code_lines = []
@@ -92,7 +100,15 @@ def markdown_to_html(markdown: str) -> str:
             flush_paragraph()
             flush_list()
             level = len(heading.group(1))
-            out.append(f"<h{level}>{render_inline(heading.group(2))}</h{level}>")
+            title = heading.group(2)
+            anchor = slugify(title)
+            count = anchor_counts.get(anchor, 0)
+            anchor_counts[anchor] = count + 1
+            if count:
+                anchor = f"{anchor}-{count + 1}"
+            out.append(f'<h{level} id="{anchor}">{render_inline(title)}</h{level}>')
+            if level in (2, 3):
+                toc.append({"level": level, "title": title, "anchor": anchor})
             continue
 
         if re.match(r"^---+$", line.strip()):
@@ -126,7 +142,17 @@ def markdown_to_html(markdown: str) -> str:
     flush_paragraph()
     flush_list()
     flush_code()
-    return "\n".join(out)
+    return "\n".join(out), toc
+
+
+def build_toc_html(toc: list[dict]) -> str:
+    if not toc:
+        return ""
+    items = []
+    for item in toc:
+        cls = "toc-sub" if item["level"] == 3 else ""
+        items.append(f'<a class="{cls}" href="#{html.escape(item["anchor"])}">{html.escape(item["title"])}' + '</a>')
+    return '<aside class="toc"><div class="toc-title">目录导航</div><nav>' + ''.join(items) + '</nav></aside>'
 
 
 def build_page(entry: dict, prev_entry: dict | None, next_entry: dict | None) -> str:
@@ -135,7 +161,7 @@ def build_page(entry: dict, prev_entry: dict | None, next_entry: dict | None) ->
     article_path = ROOT / entry.get("wechat_path", "")
     markdown = article_path.read_text(encoding="utf-8") if article_path.exists() else "# 文章不存在\n"
     markdown = clean_markdown(markdown)
-    body_html = markdown_to_html(markdown)
+    body_html, toc = markdown_to_html(markdown)
     projects = " / ".join(project.get("name", "") for project in entry.get("projects", []) if project.get("name"))
     github_url = GITHUB_BASE + entry.get("wechat_path", "")
     prev_link = f"../posts/{prev_entry.get('slug')}.html" if prev_entry and prev_entry.get("slug") else ""
@@ -183,11 +209,18 @@ def build_page(entry: dict, prev_entry: dict | None, next_entry: dict | None) ->
       .article-content pre code {{ padding:0; background:transparent; color:inherit; }}
       .article-content a {{ color:var(--brand); text-decoration:none; border-bottom:1px solid rgba(13,122,95,.22); }}
       .article-content a:hover {{ border-bottom-color: rgba(13,122,95,.5); }}
+      .content-grid {{ display:grid; grid-template-columns:minmax(0, 1fr) 240px; gap:22px; align-items:start; }}
+      .toc {{ position:sticky; top:20px; padding:18px; border-radius:22px; border:1px solid var(--line); background:rgba(255,255,255,.64); }}
+      .toc-title {{ margin-bottom:12px; font-size:14px; font-weight:800; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; }}
+      .toc nav {{ display:grid; gap:10px; }}
+      .toc a {{ color:var(--ink); text-decoration:none; border:0; line-height:1.5; }}
+      .toc a.toc-sub {{ padding-left:14px; color:var(--muted); font-size:14px; }}
       .pager {{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:24px; }}
       .pager a {{ display:block; padding:18px; border-radius:20px; border:1px solid var(--line); background:rgba(255,255,255,.62); text-decoration:none; }}
       .pager small {{ display:block; color:var(--muted); margin-bottom:6px; font-size:13px; font-weight:700; }}
       .pager strong {{ display:block; line-height:1.5; }}
       .footer {{ margin-top:20px; background:linear-gradient(135deg, rgba(13,122,95,.08), rgba(202,93,42,.08)); }}
+      @media (max-width:900px) {{ .content-grid {{ grid-template-columns:1fr; }} .toc {{ position:static; order:-1; }} }}
       @media (max-width:720px) {{ .topbar {{ flex-direction:column; align-items:flex-start; }} .hero,.article,.footer {{ padding:22px; }} .article-content p,.article-content li {{ font-size:16px; }} .pager {{ grid-template-columns:1fr; }} }}
     </style>
   </head>
@@ -214,7 +247,7 @@ def build_page(entry: dict, prev_entry: dict | None, next_entry: dict | None) ->
           <a class=\"button secondary\" href=\"{html.escape(github_url)}\" target=\"_blank\" rel=\"noreferrer\">GitHub 文件</a>
         </div>
       </section>
-      <article class=\"article\"><div class=\"article-content\">{body_html}</div>{build_pager_html(prev_link, prev_title, next_link, next_title)}</article>
+      <article class=\"article\"><div class=\"content-grid\"><div class=\"article-content\">{body_html}{build_pager_html(prev_link, prev_title, next_link, next_title)}</div>{build_toc_html(toc)}</div></article>
       <section class=\"footer\"><p class=\"muted\">如果你也在关注 AI、Agent 和最新开源趋势，欢迎关注微信公众号：碳基生物观察局。我会持续分享值得跟踪的 AI 项目、产品观察和实战解读。</p></section>
     </main>
   </body>
