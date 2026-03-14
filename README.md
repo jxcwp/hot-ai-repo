@@ -16,9 +16,9 @@
 
 ## 今日 Top 3
 
-- 今日更新：[`GitHub 趋势炸出 3 个 AI 开源狠角色，今天最该盯住的是谁？`](content/top3/2026-03-14/github-trending-ai-top3-2026-03-14-wechat.md)
+- 今日更新：[`GitHub 热榜又变了：今天最值得追的 3 个 AI 开源项目`](content/top3/2026-03-14/github-ai-trending-watch-3-projects-2026-03-14-wechat.md)
 - 日期：`2026-03-14`
-- 入选项目：`Gemini CLI` / `Firecrawl` / `DeerFlow`
+- 入选项目：`DeerFlow / Unsloth / Claude-Mem`
 - 历史归档：[`content/top3/README.md`](content/top3/README.md)
 - GitHub Pages：[`docs/index.html`](docs/index.html)
 
@@ -41,8 +41,9 @@
 
 ## 最新更新
 
-- [`2026-03-14 | GitHub 趋势炸出 3 个 AI 开源狠角色，今天最该盯住的是谁？`](content/top3/2026-03-14/github-trending-ai-top3-2026-03-14-wechat.md)
+- [`2026-03-14 | GitHub 热榜又变了：今天最值得追的 3 个 AI 开源项目`](content/top3/2026-03-14/github-ai-trending-watch-3-projects-2026-03-14-wechat.md)
 - [`2026-03-14 | GitHub AI 热榜里，真正值得现在跟进的 3 个开源项目`](content/top3/2026-03-14/github-ai-hotlist-3-projects-wechat.md)
+- [`2026-03-14 | GitHub 趋势炸出 3 个 AI 开源狠角色，今天最该盯住的是谁？`](content/top3/2026-03-14/github-trending-ai-top3-2026-03-14-wechat.md)
 
 ## 重点关注方向
 
@@ -63,6 +64,7 @@
 - [`docs/index.html`](docs/index.html)：GitHub Pages 首页
 - [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml)：GitHub Pages 自动部署 workflow
 - [`scripts/update_top3_archive.py`](scripts/update_top3_archive.py)：根据 `index.json` 自动刷新归档页
+- [`scripts/update_repo_readme.py`](scripts/update_repo_readme.py)：根据 `index.json` 自动刷新 README
 
 ## 如何使用
 
@@ -80,3 +82,4 @@
 - 产品观察
 - 实战解读
 - 趋势判断
+

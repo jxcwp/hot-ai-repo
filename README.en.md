@@ -16,9 +16,9 @@ If you care about AI, agents, RAG, coding, voice, and video, `Star` this repo fi
 
 ## Today Top 3
 
-- Latest: [`GitHub 趋势炸出 3 个 AI 开源狠角色，今天最该盯住的是谁？`](content/top3/2026-03-14/github-trending-ai-top3-2026-03-14-wechat.md)
+- Latest: [`GitHub 热榜又变了：今天最值得追的 3 个 AI 开源项目`](content/top3/2026-03-14/github-ai-trending-watch-3-projects-2026-03-14-wechat.md)
 - Date: `2026-03-14`
-- Picks: `Gemini CLI` / `Firecrawl` / `DeerFlow`
+- Picks: `DeerFlow / Unsloth / Claude-Mem`
 - Archive: [`content/top3/README.md`](content/top3/README.md)
 - GitHub Pages: [`docs/index.html`](docs/index.html)
 
@@ -41,8 +41,9 @@ If you care about AI, agents, RAG, coding, voice, and video, `Star` this repo fi
 
 ## Latest Updates
 
-- [`2026-03-14 | GitHub 趋势炸出 3 个 AI 开源狠角色，今天最该盯住的是谁？`](content/top3/2026-03-14/github-trending-ai-top3-2026-03-14-wechat.md)
+- [`2026-03-14 | GitHub 热榜又变了：今天最值得追的 3 个 AI 开源项目`](content/top3/2026-03-14/github-ai-trending-watch-3-projects-2026-03-14-wechat.md)
 - [`2026-03-14 | GitHub AI 热榜里，真正值得现在跟进的 3 个开源项目`](content/top3/2026-03-14/github-ai-hotlist-3-projects-wechat.md)
+- [`2026-03-14 | GitHub 趋势炸出 3 个 AI 开源狠角色，今天最该盯住的是谁？`](content/top3/2026-03-14/github-trending-ai-top3-2026-03-14-wechat.md)
 
 ## Focus Areas
 
@@ -62,6 +63,8 @@ More thematic collections are coming.
 - [`content/top3/README.md`](content/top3/README.md): human-readable archive
 - [`docs/index.html`](docs/index.html): GitHub Pages homepage
 - [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml): GitHub Pages deployment workflow
+- [`scripts/update_top3_archive.py`](scripts/update_top3_archive.py): archive updater
+- [`scripts/update_repo_readme.py`](scripts/update_repo_readme.py): README updater
 
 ## How To Use
 
