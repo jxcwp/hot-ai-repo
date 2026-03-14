@@ -1,0 +1,66 @@
+{
+  "entries": [
+    {
+      "date": "2026-03-14",
+      "title": "GitHub 趋势炸出 3 个 AI 开源狠角色，今天最该盯住的是谁？",
+      "slug": "github-trending-ai-top3-2026-03-14",
+      "wechat_path": "content/top3/2026-03-14/github-trending-ai-top3-2026-03-14-wechat.md",
+      "sources": [
+        "https://github.com/trending?since=daily",
+        "https://github.com/topics/artificial-intelligence",
+        "https://github.com/topics/ai-agents",
+        "https://github.com/google-gemini/gemini-cli",
+        "https://github.com/firecrawl/firecrawl",
+        "https://github.com/bytedance/deer-flow"
+      ],
+      "projects": [
+        {
+          "name": "Gemini CLI",
+          "repo_url": "https://github.com/google-gemini/gemini-cli",
+          "category": "终端 AI Agent / 开发工具"
+        },
+        {
+          "name": "Firecrawl",
+          "repo_url": "https://github.com/firecrawl/firecrawl",
+          "category": "AI Web 数据基础设施"
+        },
+        {
+          "name": "DeerFlow",
+          "repo_url": "https://github.com/bytedance/deer-flow",
+          "category": "Super Agent Harness / Deep Research"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-14",
+      "title": "GitHub AI 热榜里，真正值得现在跟进的 3 个开源项目",
+      "slug": "github-ai-hotlist-3-projects",
+      "wechat_path": "content/top3/2026-03-14/github-ai-hotlist-3-projects-wechat.md",
+      "sources": [
+        "https://github.com/trending?since=daily",
+        "https://github.com/topics/llm",
+        "https://github.com/topics/agents",
+        "https://github.com/OpenHands/OpenHands",
+        "https://github.com/ComposioHQ/composio",
+        "https://github.com/chroma-core/chroma"
+      ],
+      "projects": [
+        {
+          "name": "OpenHands",
+          "repo_url": "https://github.com/OpenHands/OpenHands",
+          "category": "AI 编程代理"
+        },
+        {
+          "name": "Composio",
+          "repo_url": "https://github.com/ComposioHQ/composio",
+          "category": "Agent 工具接入 / MCP 基础设施"
+        },
+        {
+          "name": "Chroma",
+          "repo_url": "https://github.com/chroma-core/chroma",
+          "category": "AI 检索 / RAG 基础设施"
+        }
+      ]
+    }
+  ]
+}
