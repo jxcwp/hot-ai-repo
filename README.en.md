@@ -80,8 +80,3 @@ I will keep sharing:
 - practical breakdowns
 - trend analysis
 
-## GitHub Pages Setup
-
-- Open `Settings -> Pages` in the GitHub repository
-- Set `Source` to `GitHub Actions`
-- Keep the current workflow file as is; future updates to `docs/` or `content/top3/` will deploy automatically

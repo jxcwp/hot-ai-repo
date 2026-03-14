@@ -79,9 +79,3 @@
 - 产品观察
 - 实战解读
 - 趋势判断
-
-## GitHub Pages 设置
-
-- 打开 GitHub 仓库的 `Settings -> Pages`
-- 在 `Build and deployment` 里把 `Source` 设为 `GitHub Actions`
-- 保持当前 workflow 文件不变，之后每次推送 `docs/` 或 `content/top3/` 相关更新都会自动部署
