@@ -65,6 +65,38 @@
         padding: 32px 20px 64px;
       }
 
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .brand {
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .nav a {
+        padding: 10px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.58);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
       .hero {
         padding: 42px;
         border: 1px solid var(--line);
@@ -179,6 +211,31 @@
         font-weight: 700;
       }
 
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .metric {
+        padding: 16px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.68);
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 24px;
+        margin-bottom: 4px;
+      }
+
+      .metric span {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
       .section {
         margin-top: 22px;
         padding: 28px;
@@ -246,18 +303,30 @@
       }
 
       @media (max-width: 860px) {
+        .topbar { flex-direction: column; align-items: flex-start; }
         .hero,
         .card,
         .section,
         .footer { padding: 22px; }
         .grid,
-        .two-col { grid-template-columns: 1fr; }
+        .two-col,
+        .metrics { grid-template-columns: 1fr; }
         .latest-title { font-size: 26px; }
       }
     </style>
   </head>
   <body>
     <main class="wrap">
+      <div class="topbar">
+        <div class="brand">AI Open Source Radar</div>
+        <nav class="nav">
+          <a href="#today">今日精选</a>
+          <a href="#archive">最新归档</a>
+          <a href="#focus">关注方向</a>
+          <a href="#follow">关注公众号</a>
+        </nav>
+      </div>
+
       <section class="hero">
         <div class="eyebrow">Daily AI Open Source Top 3</div>
         <h1>每天帮你从 GitHub 里，筛出真正值得盯住的 3 个 AI 开源项目</h1>
@@ -265,13 +334,18 @@
           AI Open Source Radar 面向中文开发者、产品经理和创业者，持续输出 GitHub 热门 AI 项目的中文解读、同类对比、上手建议和商业视角。
         </p>
         <div class="actions">
-          <a class="button primary" id="hero-latest-link" href="article.html?slug=github-trending-ai-top3-2026-03-14">阅读今日 Top 3</a>
+          <a class="button primary" id="hero-latest-link" href="posts/github-trending-ai-top3-2026-03-14.html">阅读今日 Top 3</a>
           <a class="button secondary" href="https://github.com/jxcwp/hot-ai-repo" target="_blank" rel="noreferrer">Star GitHub 仓库</a>
           <a class="button secondary" href="#follow">关注公众号</a>
         </div>
+        <div class="metrics">
+          <div class="metric"><strong>Top 3</strong><span>每天精选 3 个值得跟进的 AI 开源项目</span></div>
+          <div class="metric"><strong>中文解读</strong><span>中文拆解、对比、上手和商业视角</span></div>
+          <div class="metric"><strong>持续归档</strong><span>沉淀成可回看的趋势资料库</span></div>
+        </div>
       </section>
 
-      <section class="grid">
+      <section class="grid" id="today">
         <article class="card loading" id="latest-card">
           <p class="meta" id="latest-date">今日更新 · 2026-03-14</p>
           <h2 class="latest-title" id="latest-title">GitHub 趋势炸出 3 个 AI 开源狠角色，今天最该盯住的是谁？</h2>
@@ -284,7 +358,7 @@
             <li>DeerFlow</li>
           </ul>
           <div class="actions">
-            <a class="button primary" id="latest-link" href="article.html?slug=github-trending-ai-top3-2026-03-14">查看正文</a>
+            <a class="button primary" id="latest-link" href="posts/github-trending-ai-top3-2026-03-14.html">查看正文</a>
             <a class="button secondary" href="content/top3/README.md">查看历史归档</a>
           </div>
         </article>
@@ -308,10 +382,10 @@
         </aside>
       </section>
 
-      <section class="section">
+      <section class="section" id="archive">
         <h2>最新归档</h2>
         <div class="archive loading" id="archive-list">
-          <a class="archive-item" href="article.html?slug=github-trending-ai-top3-2026-03-14">
+          <a class="archive-item" href="posts/github-trending-ai-top3-2026-03-14.html">
             <strong>2026-03-14 · GitHub 趋势炸出 3 个 AI 开源狠角色，今天最该盯住的是谁？</strong>
             <span class="note">Gemini CLI / Firecrawl / DeerFlow</span>
           </a>
@@ -319,7 +393,7 @@
       </section>
 
       <section class="two-col">
-        <article class="section">
+        <article class="section" id="focus">
           <h2>重点关注方向</h2>
           <div class="focus">
             <span>Agent</span>
@@ -341,7 +415,7 @@
 
       <section class="footer">
         <p>
-          GitHub Pages 已通过 GitHub Actions 自动部署。后续只要更新 `docs/` 或 `content/top3/` 并推送到 `main`，站点就会自动刷新。
+          如果你也在关注 AI、Agent 和最新开源趋势，欢迎关注微信公众号 <strong>碳基生物观察局</strong>。这里会持续更新值得跟踪的开源项目、产品观察和实战解读。
         </p>
       </section>
     </main>
@@ -355,7 +429,7 @@
           if (!entries.length) return;
 
           const latest = entries[0];
-          const latestLink = latest.slug ? 'article.html?slug=' + encodeURIComponent(latest.slug) : '#';
+          const latestLink = latest.slug ? 'posts/' + encodeURIComponent(latest.slug) + '.html' : '#';
           const latestNames = (latest.projects || []).map((project) => project.name).filter(Boolean);
 
           document.getElementById('hero-latest-link').href = latestLink;
@@ -379,7 +453,7 @@
           entries.slice(0, 8).forEach((entry) => {
             const link = document.createElement('a');
             link.className = 'archive-item';
-            link.href = entry.slug ? 'article.html?slug=' + encodeURIComponent(entry.slug) : '#';
+            link.href = entry.slug ? 'posts/' + encodeURIComponent(entry.slug) + '.html' : '#';
 
             const title = document.createElement('strong');
             title.textContent = entry.date + ' · ' + entry.title;

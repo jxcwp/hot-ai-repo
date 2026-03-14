@@ -37,6 +37,9 @@ jobs:
       - name: Update archive homepage
         run: python3 scripts/update_top3_archive.py
 
+      - name: Generate article pages
+        run: python3 scripts/generate_top3_pages.py
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
