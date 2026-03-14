@@ -129,7 +129,7 @@ def markdown_to_html(markdown: str) -> str:
     return "\n".join(out)
 
 
-def build_page(entry: dict) -> str:
+def build_page(entry: dict, prev_entry: dict | None, next_entry: dict | None) -> str:
     title = entry.get("title", "AI Open Source Radar")
     date = entry.get("date", "未知日期")
     article_path = ROOT / entry.get("wechat_path", "")
@@ -138,6 +138,10 @@ def build_page(entry: dict) -> str:
     body_html = markdown_to_html(markdown)
     projects = " / ".join(project.get("name", "") for project in entry.get("projects", []) if project.get("name"))
     github_url = GITHUB_BASE + entry.get("wechat_path", "")
+    prev_link = f"../posts/{prev_entry.get('slug')}.html" if prev_entry and prev_entry.get("slug") else ""
+    next_link = f"../posts/{next_entry.get('slug')}.html" if next_entry and next_entry.get("slug") else ""
+    prev_title = prev_entry.get("title", "") if prev_entry else ""
+    next_title = next_entry.get("title", "") if next_entry else ""
 
     return f"""<!doctype html>
 <html lang=\"zh-CN\">
@@ -179,8 +183,12 @@ def build_page(entry: dict) -> str:
       .article-content pre code {{ padding:0; background:transparent; color:inherit; }}
       .article-content a {{ color:var(--brand); text-decoration:none; border-bottom:1px solid rgba(13,122,95,.22); }}
       .article-content a:hover {{ border-bottom-color: rgba(13,122,95,.5); }}
+      .pager {{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:24px; }}
+      .pager a {{ display:block; padding:18px; border-radius:20px; border:1px solid var(--line); background:rgba(255,255,255,.62); text-decoration:none; }}
+      .pager small {{ display:block; color:var(--muted); margin-bottom:6px; font-size:13px; font-weight:700; }}
+      .pager strong {{ display:block; line-height:1.5; }}
       .footer {{ margin-top:20px; background:linear-gradient(135deg, rgba(13,122,95,.08), rgba(202,93,42,.08)); }}
-      @media (max-width:720px) {{ .topbar {{ flex-direction:column; align-items:flex-start; }} .hero,.article,.footer {{ padding:22px; }} .article-content p,.article-content li {{ font-size:16px; }} }}
+      @media (max-width:720px) {{ .topbar {{ flex-direction:column; align-items:flex-start; }} .hero,.article,.footer {{ padding:22px; }} .article-content p,.article-content li {{ font-size:16px; }} .pager {{ grid-template-columns:1fr; }} }}
     </style>
   </head>
   <body>
@@ -206,7 +214,7 @@ def build_page(entry: dict) -> str:
           <a class=\"button secondary\" href=\"{html.escape(github_url)}\" target=\"_blank\" rel=\"noreferrer\">GitHub 文件</a>
         </div>
       </section>
-      <article class=\"article\"><div class=\"article-content\">{body_html}</div></article>
+      <article class=\"article\"><div class=\"article-content\">{body_html}</div>{build_pager_html(prev_link, prev_title, next_link, next_title)}</article>
       <section class=\"footer\"><p class=\"muted\">如果你也在关注 AI、Agent 和最新开源趋势，欢迎关注微信公众号：碳基生物观察局。我会持续分享值得跟踪的 AI 项目、产品观察和实战解读。</p></section>
     </main>
   </body>
@@ -218,12 +226,31 @@ def main() -> None:
     data = json.loads(INDEX_PATH.read_text(encoding="utf-8"))
     entries = data.get("entries", [])
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    for entry in entries:
+    for idx, entry in enumerate(entries):
         slug = entry.get("slug")
         if not slug:
             continue
         output_file = OUTPUT_DIR / f"{slug}.html"
-        output_file.write_text(build_page(entry), encoding="utf-8")
+        prev_entry = entries[idx - 1] if idx > 0 else None
+        next_entry = entries[idx + 1] if idx + 1 < len(entries) else None
+        output_file.write_text(build_page(entry, prev_entry, next_entry), encoding="utf-8")
+
+
+def build_pager_html(prev_link: str, prev_title: str, next_link: str, next_title: str) -> str:
+    items = []
+    if prev_link:
+        items.append(
+            f'<a href="{html.escape(prev_link)}"><small>上一篇</small><strong>{html.escape(prev_title)}</strong></a>'
+        )
+    else:
+        items.append('<div></div>')
+    if next_link:
+        items.append(
+            f'<a href="{html.escape(next_link)}"><small>下一篇</small><strong>{html.escape(next_title)}</strong></a>'
+        )
+    else:
+        items.append('<div></div>')
+    return '<div class="pager">' + ''.join(items) + '</div>'
 
 
 if __name__ == "__main__":
