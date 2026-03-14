@@ -1,16 +1,14 @@
 # Top 3 Archive
 
-This directory stores daily AI open source Top 3 outputs.
+这里收录每日 AI 开源项目 Top 3 推文归档。
 
-Structure:
-- `YYYY-MM-DD/标题.json`: structured JSON digest
-- `YYYY-MM-DD/标题.md`: publish-ready Markdown digest
-- `YYYY-MM-DD/标题-wechat.md`: WeChat-style post
-- `index.json`: machine-readable archive manifest
-
-Index entries will be appended by the OpenCode commands when new digests are generated.
+结构说明：
+- `YYYY-MM-DD/标题.json`：结构化 JSON 结果
+- `YYYY-MM-DD/标题.md`：常规 Markdown 版本
+- `YYYY-MM-DD/标题-wechat.md`：公众号风格版本
+- `index.json`：机器可读归档索引
 
 ## Archive
 
-- `2026-03-14` - `content/top3/2026-03-14/github-trending-ai-top3-2026-03-14-wechat.md`
-- `2026-03-14` - `content/top3/2026-03-14/github-ai-hotlist-3-projects-wechat.md`
+- `2026-03-14` GitHub 趋势炸出 3 个 AI 开源狠角色，今天最该盯住的是谁？ ([GitHub](https://github.com/jxcwp/hot-ai-repo/blob/main/content/top3/2026-03-14/github-trending-ai-top3-2026-03-14-wechat.md) | [Pages](https://jxcwp.github.io/hot-ai-repo/content/top3/2026-03-14/github-trending-ai-top3-2026-03-14-wechat.md)) - Gemini CLI / Firecrawl / DeerFlow
+- `2026-03-14` GitHub AI 热榜里，真正值得现在跟进的 3 个开源项目 ([GitHub](https://github.com/jxcwp/hot-ai-repo/blob/main/content/top3/2026-03-14/github-ai-hotlist-3-projects-wechat.md) | [Pages](https://jxcwp.github.io/hot-ai-repo/content/top3/2026-03-14/github-ai-hotlist-3-projects-wechat.md)) - OpenHands / Composio / Chroma

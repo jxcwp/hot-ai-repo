@@ -62,6 +62,7 @@
 - [`content/top3/README.md`](content/top3/README.md)：人工浏览索引
 - [`docs/index.html`](docs/index.html)：GitHub Pages 首页
 - [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml)：GitHub Pages 自动部署 workflow
+- [`scripts/update_top3_archive.py`](scripts/update_top3_archive.py)：根据 `index.json` 自动刷新归档页
 
 ## 如何使用
 
