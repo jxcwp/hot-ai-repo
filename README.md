@@ -67,6 +67,7 @@ More thematic collections are coming.
 - [`content/top3/index.json`](content/top3/index.json): 机器可读索引 / machine-readable index
 - [`content/top3/README.md`](content/top3/README.md): 人工浏览索引 / human-readable archive
 - [`docs/index.html`](docs/index.html): GitHub Pages homepage
+- [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml): GitHub Pages deploy workflow
 
 ## How To Use
 
@@ -86,3 +87,9 @@ If you want more AI open source tracking, product observations, and practical br
 - 产品观察 / product observations
 - 实战解读 / practical breakdowns
 - 趋势判断 / trend analysis
+
+## GitHub Pages Setup
+
+- 打开 GitHub 仓库的 `Settings -> Pages`
+- 在 `Build and deployment` 里把 `Source` 设为 `GitHub Actions`
+- 保持当前 workflow 文件不变，之后每次推送 `docs/` 或 `content/top3/` 相关更新都会自动部署
