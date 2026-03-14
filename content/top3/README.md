@@ -12,3 +12,4 @@
 
 - `2026-03-14` GitHub 趋势炸出 3 个 AI 开源狠角色，今天最该盯住的是谁？ ([GitHub](https://github.com/jxcwp/hot-ai-repo/blob/main/content/top3/2026-03-14/github-trending-ai-top3-2026-03-14-wechat.md) | [Pages](https://jxcwp.github.io/hot-ai-repo/posts/github-trending-ai-top3-2026-03-14.html)) - Gemini CLI / Firecrawl / DeerFlow
 - `2026-03-14` GitHub AI 热榜里，真正值得现在跟进的 3 个开源项目 ([GitHub](https://github.com/jxcwp/hot-ai-repo/blob/main/content/top3/2026-03-14/github-ai-hotlist-3-projects-wechat.md) | [Pages](https://jxcwp.github.io/hot-ai-repo/posts/github-ai-hotlist-3-projects.html)) - OpenHands / Composio / Chroma
+- `2026-03-14` GitHub 热榜又变了：今天最值得追的 3 个 AI 开源项目 ([GitHub](https://github.com/jxcwp/hot-ai-repo/blob/main/content/top3/2026-03-14/github-ai-trending-watch-3-projects-2026-03-14-wechat.md) | [Pages](https://jxcwp.github.io/hot-ai-repo/posts/github-ai-trending-watch-3-projects-2026-03-14.html)) - DeerFlow / Unsloth / Claude-Mem

@@ -61,6 +61,38 @@
           "category": "AI 检索 / RAG 基础设施"
         }
       ]
+    },
+    {
+      "date": "2026-03-14",
+      "title": "GitHub 热榜又变了：今天最值得追的 3 个 AI 开源项目",
+      "slug": "github-ai-trending-watch-3-projects-2026-03-14",
+      "wechat_path": "content/top3/2026-03-14/github-ai-trending-watch-3-projects-2026-03-14-wechat.md",
+      "sources": [
+        "https://github.com/trending?since=daily",
+        "https://github.com/topics/artificial-intelligence",
+        "https://github.com/topics/agent",
+        "https://github.com/topics/rag",
+        "https://github.com/bytedance/deer-flow",
+        "https://github.com/unslothai/unsloth",
+        "https://github.com/thedotmack/claude-mem"
+      ],
+      "projects": [
+        {
+          "name": "DeerFlow",
+          "repo_url": "https://github.com/bytedance/deer-flow",
+          "category": "Super Agent 运行时"
+        },
+        {
+          "name": "Unsloth",
+          "repo_url": "https://github.com/unslothai/unsloth",
+          "category": "大模型训练加速 / 微调基础设施"
+        },
+        {
+          "name": "Claude-Mem",
+          "repo_url": "https://github.com/thedotmack/claude-mem",
+          "category": "AI 编码记忆层 / 开发者工具"
+        }
+      ]
     }
   ]
 }
