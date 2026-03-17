@@ -16,9 +16,9 @@ If you care about AI, agents, RAG, coding, voice, and video, `Star` this repo fi
 
 ## Today Top 3
 
-- Latest: [`GitHub 热榜又变了：今天最值得追的 3 个 AI 开源项目`](content/top3/2026-03-14/github-ai-trending-watch-3-projects-2026-03-14-wechat.md)
-- Date: `2026-03-14`
-- Picks: `DeerFlow / Unsloth / Claude-Mem`
+- Latest: [`GitHub 热榜换人了：今天更值得看的 3 个 AI 开源项目`](content/top3/2026-03-17/github-ai-trending-watch-2026-03-17-wechat.md)
+- Date: `2026-03-17`
+- Picks: `browser-use / Mem0 / Daytona`
 - Archive: [`content/top3/README.md`](content/top3/README.md)
 - GitHub Pages: [`docs/index.html`](docs/index.html)
 
@@ -41,6 +41,8 @@ If you care about AI, agents, RAG, coding, voice, and video, `Star` this repo fi
 
 ## Latest Updates
 
+- [`2026-03-17 | GitHub 热榜换人了：今天更值得看的 3 个 AI 开源项目`](content/top3/2026-03-17/github-ai-trending-watch-2026-03-17-wechat.md)
+- [`2026-03-17 | GitHub 热榜今天最该追的 3 个 AI 开源项目`](content/top3/2026-03-17/github-ai-trending-top3-2026-03-17-wechat.md)
 - [`2026-03-14 | GitHub 热榜又变了：今天最值得追的 3 个 AI 开源项目`](content/top3/2026-03-14/github-ai-trending-watch-3-projects-2026-03-14-wechat.md)
 - [`2026-03-14 | GitHub AI 热榜里，真正值得现在跟进的 3 个开源项目`](content/top3/2026-03-14/github-ai-hotlist-3-projects-wechat.md)
 - [`2026-03-14 | GitHub 趋势炸出 3 个 AI 开源狠角色，今天最该盯住的是谁？`](content/top3/2026-03-14/github-trending-ai-top3-2026-03-14-wechat.md)

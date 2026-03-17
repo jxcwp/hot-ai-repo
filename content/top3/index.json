@@ -93,6 +93,71 @@
           "category": "AI 编码记忆层 / 开发者工具"
         }
       ]
+    },
+    {
+      "date": "2026-03-17",
+      "title": "GitHub 热榜今天最该追的 3 个 AI 开源项目",
+      "slug": "github-ai-trending-top3-2026-03-17",
+      "wechat_path": "content/top3/2026-03-17/github-ai-trending-top3-2026-03-17-wechat.md",
+      "sources": [
+        "https://github.com/trending?since=daily",
+        "https://github.com/topics/artificial-intelligence",
+        "https://github.com/topics/ai-agents",
+        "https://github.com/topics/rag",
+        "https://github.com/google-gemini/gemini-cli",
+        "https://github.com/firecrawl/firecrawl",
+        "https://github.com/bytedance/deer-flow"
+      ],
+      "projects": [
+        {
+          "name": "Gemini CLI",
+          "repo_url": "https://github.com/google-gemini/gemini-cli",
+          "category": "终端 AI Agent / 开发工具"
+        },
+        {
+          "name": "Firecrawl",
+          "repo_url": "https://github.com/firecrawl/firecrawl",
+          "category": "AI Web 数据基础设施"
+        },
+        {
+          "name": "DeerFlow",
+          "repo_url": "https://github.com/bytedance/deer-flow",
+          "category": "Super Agent Harness / 长任务运行时"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-17",
+      "title": "GitHub 热榜换人了：今天更值得看的 3 个 AI 开源项目",
+      "slug": "github-ai-trending-watch-2026-03-17",
+      "wechat_path": "content/top3/2026-03-17/github-ai-trending-watch-2026-03-17-wechat.md",
+      "sources": [
+        "https://github.com/trending?since=daily",
+        "https://github.com/topics/artificial-intelligence",
+        "https://github.com/topics/ai-agents",
+        "https://github.com/topics/rag",
+        "https://github.com/search?q=topic%3Aai-agent+sort%3Astars",
+        "https://github.com/browser-use/browser-use",
+        "https://github.com/mem0ai/mem0",
+        "https://github.com/daytonaio/daytona"
+      ],
+      "projects": [
+        {
+          "name": "browser-use",
+          "repo_url": "https://github.com/browser-use/browser-use",
+          "category": "浏览器 Agent / 网页自动化执行"
+        },
+        {
+          "name": "Mem0",
+          "repo_url": "https://github.com/mem0ai/mem0",
+          "category": "Agent 记忆层 / 长期上下文基础设施"
+        },
+        {
+          "name": "Daytona",
+          "repo_url": "https://github.com/daytonaio/daytona",
+          "category": "Agent 沙箱运行时 / 代码执行基础设施"
+        }
+      ]
     }
   ]
 }
