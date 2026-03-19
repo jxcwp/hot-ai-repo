@@ -16,9 +16,9 @@
 
 ## 今日 Top 3
 
-- 今日更新：[`GitHub 热榜换人了：今天更值得看的 3 个 AI 开源项目`](content/top3/2026-03-17/github-ai-trending-watch-2026-03-17-wechat.md)
-- 日期：`2026-03-17`
-- 入选项目：`browser-use / Mem0 / Daytona`
+- 今日更新：[`GitHub 热榜开始转向能落地的 AI 项目：今天最值得看的 3 个新选择`](content/top3/2026-03-19/github-热榜开始转向能落地的-ai-项目-今天最值得看的-3-个新选择-wechat.md)
+- 日期：`2026-03-19`
+- 入选项目：`Flowise / CrewAI / AnythingLLM`
 - 历史归档：[`content/top3/README.md`](content/top3/README.md)
 - GitHub Pages：[`docs/index.html`](docs/index.html)
 
@@ -41,11 +41,11 @@
 
 ## 最新更新
 
+- [`2026-03-19 | GitHub 热榜开始转向能落地的 AI 项目：今天最值得看的 3 个新选择`](content/top3/2026-03-19/github-热榜开始转向能落地的-ai-项目-今天最值得看的-3-个新选择-wechat.md)
 - [`2026-03-17 | GitHub 热榜换人了：今天更值得看的 3 个 AI 开源项目`](content/top3/2026-03-17/github-ai-trending-watch-2026-03-17-wechat.md)
 - [`2026-03-17 | GitHub 热榜今天最该追的 3 个 AI 开源项目`](content/top3/2026-03-17/github-ai-trending-top3-2026-03-17-wechat.md)
 - [`2026-03-14 | GitHub 热榜又变了：今天最值得追的 3 个 AI 开源项目`](content/top3/2026-03-14/github-ai-trending-watch-3-projects-2026-03-14-wechat.md)
 - [`2026-03-14 | GitHub AI 热榜里，真正值得现在跟进的 3 个开源项目`](content/top3/2026-03-14/github-ai-hotlist-3-projects-wechat.md)
-- [`2026-03-14 | GitHub 趋势炸出 3 个 AI 开源狠角色，今天最该盯住的是谁？`](content/top3/2026-03-14/github-trending-ai-top3-2026-03-14-wechat.md)
 
 ## 重点关注方向
 

@@ -158,6 +158,37 @@
           "category": "Agent 沙箱运行时 / 代码执行基础设施"
         }
       ]
+    },
+    {
+      "date": "2026-03-19",
+      "title": "GitHub 热榜开始转向能落地的 AI 项目：今天最值得看的 3 个新选择",
+      "slug": "github-热榜开始转向能落地的-ai-项目-今天最值得看的-3-个新选择",
+      "wechat_path": "content/top3/2026-03-19/github-热榜开始转向能落地的-ai-项目-今天最值得看的-3-个新选择-wechat.md",
+      "sources": [
+        "https://github.com/trending?since=daily",
+        "https://github.com/topics/artificial-intelligence",
+        "https://github.com/topics/ai-agents",
+        "https://github.com/FlowiseAI/Flowise",
+        "https://github.com/crewAIInc/crewAI",
+        "https://github.com/Mintplex-Labs/anything-llm"
+      ],
+      "projects": [
+        {
+          "name": "Flowise",
+          "repo_url": "https://github.com/FlowiseAI/Flowise",
+          "category": "可视化 Agent / RAG 搭建平台"
+        },
+        {
+          "name": "CrewAI",
+          "repo_url": "https://github.com/crewAIInc/crewAI",
+          "category": "多 Agent 编排框架"
+        },
+        {
+          "name": "AnythingLLM",
+          "repo_url": "https://github.com/Mintplex-Labs/anything-llm",
+          "category": "私有 AI 工作台 / 知识助手"
+        }
+      ]
     }
   ]
 }
